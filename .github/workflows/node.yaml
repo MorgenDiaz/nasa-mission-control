@@ -6,8 +6,8 @@ on:
     branches: [main]
 jobs:
   build:
-  env:
-    CI: true
+    env:
+      CI: true
     strategy:
       matrix:
         node-version: [14.x, 16.x]
