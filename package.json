@@ -1,0 +1,33 @@
+{
+  "name": "nasa-mission-control",
+  "version": "1.0.0",
+  "description": "A project to familiarize myself with the node runtime.",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
+    "test": "npm test --prefix server && npm test --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorgenDiaz/nasa-mission-control.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MorgenDiaz/nasa-mission-control/issues"
+  },
+  "homepage": "https://github.com/MorgenDiaz/nasa-mission-control#readme",
+  "dependencies": {
+    "axios": "^1.1.2",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0"
+  }
+}
