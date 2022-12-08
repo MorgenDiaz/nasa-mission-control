@@ -1,5 +1,5 @@
 # The base docker image
-FROM node: lts-alpine
+FROM node:lts-alpine
 
 # Create a directory where all subsequent commands will be executed.
 WORKDIR /app

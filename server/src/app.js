@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
-const morgan = require("morgan");
+
 const api = require("./route/api");
 
 const app = express();
@@ -12,7 +12,10 @@ app.use(
   })
 );
 
-app.use(morgan("combined"));
+if (process.env.NODE_ENV !== "production") {
+  const morgan = require("morgan");
+  app.use(morgan("combined"));
+}
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/v1", api);
